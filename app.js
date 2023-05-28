@@ -10,6 +10,31 @@ app.get('/', (request, response) => {
     });
 });
 
+    //rodar de um banco de dados sql
+    //modelo apresentado na aula
+    app.get("/consulta-dados", (req, res) => {
+
+        db.query("SELECT * from consulta-dados", (err, result) => {
+            if (err)
+                return res.status(500).json(err);
+            else
+                return res.status(200).json({ message: result });
+        });
+        
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get('/liveness', (request, response) => {
     // const gid = process.getgid ? process.getgid() : null;
     // const uid = process.getuid ? process.getuid() : null;
