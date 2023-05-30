@@ -1,5 +1,3 @@
-import mysql from 'mysql2/promise';
-
 const express = require("express");
 const os = require("os");
 const app = express();
